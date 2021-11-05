@@ -1,5 +1,5 @@
-const { serverClient } = require("./client");
+import serverClient from './client.js';
 
 const createToken = (userID) => serverClient.createToken(userID);
 
-exports.createToken = createToken;
+export default createToken;
