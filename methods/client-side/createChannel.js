@@ -1,4 +1,4 @@
-const { chatClient, user_id } = require("./client");
+import { chatClient, user_id } from "./client.js";
 
 const createChannel = async (type, id, members, name) => {
   const channel = chatClient.channel(type, id, {
@@ -11,6 +11,6 @@ const createChannel = async (type, id, members, name) => {
 createChannel(
   "messaging",
   "testing-playground-03",
-  ["katie", "snoopy"],
+  ["george"],
   "snoopys secret channel"
 ).then((r) => console.log(r));

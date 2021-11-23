@@ -1,4 +1,4 @@
-const { chatClient, user_id } = require("./client");
+import { chatClient, user_id } from "./client.js";
 
 const messagingMembers = async () => {
   // a standard and recommended filter
@@ -29,4 +29,4 @@ const onlyMeAndMyFriend = async (friend) => {
   return result;
 };
 
-// onlyMeAndMyFriend("george").then((r) => console.log(r));
+onlyMeAndMyFriend("george").then((r) => console.log(r));
