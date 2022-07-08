@@ -11,7 +11,8 @@ const secret = process.env["API_SECRET"];
 // const chatClient = new StreamChat(app_key); // you may see this - updated version below using getInstance()
 const chatClient = StreamChat.getInstance(app_key);
 
-const user_id = "katie";
+const user_id = "Johann11";
+//imnportant in this file change the user_id
 
 const extraData = {
   type: "puppy",

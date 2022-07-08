@@ -1,0 +1,36 @@
+Questions:
+
+Where: UpdateMessage //OK
+question: Having an error of ('UpdateMessage failed with error: "either message.user or message.user_id must be provided when using server side auth.")// OK
+
+Where: UpdateMessage / partialUpdate //OK
+question: Having an error of ('UpdateMessage failed with error: "either message.user or message.user_id must be provided when using server side auth.") //OK
+
+Where: creatingChannel  / Stop Watching a Channel   //OK
+question: Having an error of ('StopWatchingChannel failed with error: "server side request is not supported for this endpoint")
+
+Where: addReaction
+question: Having an error of ('SendReaction failed with error: "either reaction.user or reaction.user_id must be provided when using server side auth."')
+
+Where: search
+question: the message shows :{
+  results: [ { message: [Object] } ],
+  next: 'eyJzZWFyY2hfYWZ0ZXIiOlszNC42NTQ3MzYsIjIyMGMzYzhkLTM5OGItNDA5ZS1hZGMzLWZlYmNlZjA0OTYxNSJdLCJzb3J0IjpbeyJmaWVsZCI6InJlbGV2YW5jZSIsImRpcmVjdGlvbiI6LTF9XX0=',
+  previous: 'eyJzZWFyY2hfYWZ0ZXIiOlszNC42NTQ3MzYsIjIyMGMzYzhkLTM5OGItNDA5ZS1hZGMzLWZlYmNlZjA0OTYxNSJdLCJzb3J0IjpbeyJmaWVsZCI6InJlbGV2YW5jZSIsImRpcmVjdGlvbiI6MX0seyJmaWVsZCI6ImlkIiwiZGlyZWN0aW9uIjotMX1dfQ==',
+  duration: '25.83ms'
+
+Where: roleCustomize 
+question: If i tried to place a new role (like special_agent), show an error : 'UpdateUsersPartial failed with error: "role "special_agent" provided but not defined"',ok
+
+Where: watchingChannel from server side, watchingMultipleChannel
+question: watcher count: 1 why? (server side) watcher_count: 2, client side /// this is the number of websockets open
+
+Where: stopWachingChannel client-side/ok
+question: it is not an error, but the last message { duration: '351.87ms' ok ////jest!!!
+
+Where: uploadFileImage /// NOT WORKING STILL SAME ERROR
+question: Having an error of ('ReferenceError: fs is not defined"). What it is fs?  /// NOT WORKING STILL SAME ERROR
+
+Where: deleteFileImage
+question: Having an error of ('DeleteFile failed with error: "url param missing or invalid"). Because i couldnt create a file... 
+

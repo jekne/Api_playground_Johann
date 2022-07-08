@@ -8,7 +8,7 @@ const APP_KEY = "chxfbypw4qgn"
 const test = async () => {
   const client = new StreamChat(APP_KEY, { timeout: 6000 });
 
-  const userID = "ryan";
+  const userID = "user_CCCC";
   const token = createToken(userID);
   const set = await client.connectUser({ id: userID }, token);
 
@@ -16,7 +16,7 @@ const test = async () => {
 
   const state = await channel.watch();
 
-  return await channel.sendMessage({ text: "seventh  one!!!!!!!" });
+  return await channel.sendMessage({ text: "message from the user_CCCC!!!!!!!" });
   
 };
 
