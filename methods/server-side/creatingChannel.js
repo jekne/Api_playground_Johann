@@ -3,9 +3,9 @@ import serverClient from "./client.js";
 
 const creatingChannel = async (user_id)=>{
     try {
-         const channel = serverClient.channel('commerce',"Roland_Garros",{
+         const channel = serverClient.channel('team',"Wimbledom",{
                 
-            name: 'Roland Garros',
+            name: 'Wimbledom',
                 created_by_id: user_id,
                 // members: ['johann11', 'johann8'],
                 // image:"newimage",
@@ -19,7 +19,7 @@ const creatingChannel = async (user_id)=>{
     }
 }
 
-// creatingChannel("johann").then((r) => console.log(r));
+creatingChannel("Johann").then((r) => console.log(r));
 
 // Creating a Channel for a List of Members
 const creatingChannelist = async ()=>{

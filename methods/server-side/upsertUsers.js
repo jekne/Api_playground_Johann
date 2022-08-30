@@ -30,9 +30,9 @@ const makeAdmin = async (user_id) => {
 };
 
 //OBS: I can pass new message, text or new strings...
-upsertMany(userArray).then((r) => console.log(r));
+// upsertMany(userArray).then((r) => console.log(r));
 // makeAdmin("johann8").then((r) => console.log(r));
-// upsertOne("Johann11").then((r)=>console.log(r))
+upsertOne("Johann").then((r)=>console.log(r))
 
 //Obs: If the name already exist, 404 
 
