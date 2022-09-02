@@ -1,4 +1,4 @@
-import { chatClient, user_id } from "./client.js";
+import serverClient from "./client.js";
 
 const messagingMembers = async (user_id) => {
   // const channel = chatClient.channel("team", "company-3926-location-1609959");
@@ -10,7 +10,7 @@ const messagingMembers = async (user_id) => {
     // id: "company-3926-location-1609959",
   };
   const sort = { last_message_at: -1 };
-  const result = await chatClient.queryChannels(filter, sort);
+  const result = await serverClient.queryChannels(filter, sort);
   return result;
 };
 
