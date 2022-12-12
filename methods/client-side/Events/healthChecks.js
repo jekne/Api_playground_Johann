@@ -1,5 +1,10 @@
-require("dotenv").config("../.env");
-const { createToken } = require("../../server-side/createToken");
+import dotenv from "dotenv";
+import createToken from "../server-side/createToken.js";
+
+dotenv.config({ path: "./.env" });
+
+// require("dotenv").config("../.env");
+// const { createToken } = require("../../server-side/createToken");
 
 const APP_KEY = process.env["APP_KEY"];
 const StreamChat = require("stream-chat").StreamChat;
@@ -14,7 +19,6 @@ const test = async () => {
   client.on((event) => {
     console.log("event", event);
   });
-
 };
 
 test().then((r) => console.log(r));
