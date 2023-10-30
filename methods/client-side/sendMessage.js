@@ -2,7 +2,10 @@ import { chatClient } from "./client.js";
 
 const sendingMessage = async (text) => {
   // //   send message
-  const channel = chatClient.channel("messaging", "testEvents");
+  const channel = chatClient.channel(
+    "messaging",
+    "!members-d9JgZcDeRNmSZdtI7ZZkefv9lPjJRGUvvyo-ex-Y0aU"
+  );
   const message = await channel.sendMessage({
     text: text,
     // user: { id: "Johann" },
@@ -13,4 +16,4 @@ const sendingMessage = async (text) => {
   return message;
 };
 
-sendingMessage("one").then((r) => console.log(r));
+sendingMessage("MESSAGE FROM TEODORO 1 ").then((r) => console.log(r));

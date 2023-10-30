@@ -3,10 +3,6 @@ import { chatClient } from "./client.js";
 const undeleteUsers = async () => {
   try {
     const response = chatClient.restoreUsers(["ioana"], ["michalvankodev"]);
-    // const response = await serverClient.queryUsers({
-    //   id: userId,
-    // });
-    // console.log(response);
 
     return response;
   } catch (error) {

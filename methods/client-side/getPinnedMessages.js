@@ -16,4 +16,6 @@ const getPinnedMessages = async (channelId) => {
   }
 };
 
-getPinnedMessages("testEvents").then((r) => console.log(r));
+getPinnedMessages("Rk1eCLk3VQQAtFty9POlkROCxJW2_1667463064054").then((r) =>
+  console.log(r)
+);

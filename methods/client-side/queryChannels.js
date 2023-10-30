@@ -68,12 +68,12 @@ const onlyMeAndMyFriend = async (friend) => {
 const queryChannels = async (user_id) => {
   const filter = {
     type: "messaging",
-    members: { $in: [user_id] },
-    id: "26141946",
+    // members: { $in: [user_id] },
+    id: "swpfhbzg3nmkzagiyrmwjonkzr5mktww6qce",
   };
 
   const channels = await chatClient.queryChannels(filter, {});
-
+  console.log("XXXXXXXXXXXXXXX", channels);
   return channels;
 };
-queryChannels("24688").then((r) => console.log(r[0]));
+queryChannels().then((r) => console.log(r[0]));

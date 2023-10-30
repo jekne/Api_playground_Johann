@@ -1,17 +1,15 @@
 import serverClient from "./client.js";
 
-const queryMebers = async () => {
+const findByName = async () => {
   try {
-    const channel = serverClient.channel(
-      "groupchat",
-      "cea4546d-86ad-4889-0f94-06eac8cc829d"
-    );
-    console.log("CHANNELS", channel);
+    const channel = serverClient.channel("try", "1682411647805");
+    // console.log("CHANNELS", channel);
     // query all the members
-    channel.queryMembers({});
+    const allMembers = channel.queryMembers({});
+    return allMembers;
   } catch (error) {
     console.log("Error >>>", error);
   }
 };
 
-queryMebers().then((r) => console.log(r));
+findByName().then((r) => console.log(r));

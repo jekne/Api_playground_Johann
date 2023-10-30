@@ -11,4 +11,4 @@ const searchUser = async (userId) => {
   return messages;
 };
 
-searchUser("johann").then((r) => console.log(r));
+searchUser("831d9b69-3c95-47b0-86d6-395c1fbaa257").then((r) => console.log(r));

@@ -1,45 +1,41 @@
-import serverClient from './client.js';
+import serverClient from "./client.js";
 
 const deleteManyUsers = async () => {
-    try {
-      //delete user using delete many endpoint
-      return await serverClient.deleteUsers(["Johann5"], {
+  try {
+    //delete user using delete many endpoint
+    return await serverClient.deleteUsers(
+      ["deleted-user-1215304-3964ba655522340594f8dc8a6cb10c1e"],
+      {
         delete_conversation_channels: false,
-        user: "soft",
+        user: "hard",
         messages: "hard",
-      });
-    } catch (error) {
-      console.log("error >>>", error);
-    }
-  };
-  
-//   deleteManyUsers().then((r) => console.log(r));
+      }
+    );
+  } catch (error) {
+    console.log("error >>>", error);
+  }
+};
 
-  //OBS: Once a user has been deleted, it cannot be un-deleted and the user_id cannot be used again. If I create user johann and delete johann, it is not possible to create anpother Johann.
+deleteManyUsers().then((r) => console.log(r));
 
+//OBS: Once a user has been deleted, it cannot be un-deleted and the user_id cannot be used again. If I create user johann and delete johann, it is not possible to create anpother Johann.
 
-  //Delete a specific User (One user per time)
-const destroySpecificUser = async ()=>{
-    try {
-      const destroy = await serverClient.deleteUser("will2", {
-        mark_messages_deleted: true,
+//Delete a specific User (One user per time)
+const destroySpecificUser = async () => {
+  try {
+    const destroy = await serverClient.deleteUser("will2", {
+      mark_messages_deleted: true,
     });
-    } catch (error) {
-        console.log("error >>>", error);
-        
-    }
-}
-console.log(" the destroy sepcific", destroySpecificUser("will2"))
-destroySpecificUser().then((r)=> console.log(r))
+  } catch (error) {
+    console.log("error >>>", error);
+  }
+};
+// console.log(" the destroy sepcific", destroySpecificUser("will2"));
+// destroySpecificUser().then((r) => console.log(r));
 
 // response: the destroy sepcific Promise { <pending> } undefined , but delete the user
 
-
-
-  
-
-
-  //following the snippet of Deleting Many Users (https://getstream.io/chat/docs/javascript/update_users/?language=javascript&q=reactions), it is possible to delete but appears as undefined, on the dashboard is it deleted
+//following the snippet of Deleting Many Users (https://getstream.io/chat/docs/javascript/update_users/?language=javascript&q=reactions), it is possible to delete but appears as undefined, on the dashboard is it deleted
 
 //   const deleteUser = async () => {
 //     try {

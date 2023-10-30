@@ -1,21 +1,16 @@
-
 import serverClient from "./client.js";
 
+const sendingMessage = async () => {
+  // //   send message
+  const channel = serverClient.channel("messaging", "channel_to_delete");
+  const message = await channel.sendMessage({
+    text: "A Test from stream!",
+    user: { id: "luis" },
 
-const sendingMessage = async ()=>{
-    
- // //   send message
- const channel = serverClient.channel("commerce","Roland_Garros")
- const message = await channel.sendMessage({
-  text: 'A new message was created!',
-  user:{id:"Johann11"},
-  mentioned_users: ["Johann9"],
- 
-
-
-})
-return message}
+    // mentioned_users: ["luis"],
+    // message_type: "system",
+  });
+  return message;
+};
 
 sendingMessage().then((r) => console.log(r));
-
-

@@ -1,4 +1,4 @@
-import serverClient from './client.js';
+import serverClient from "./client.js";
 
 const userArray = [
   { id: "thierry" },
@@ -13,33 +13,35 @@ const upsertMany = async (users) => {
 };
 
 const upsertOne = async (user_id) => {
-  return await serverClient.upsertUser({ id: user_id ,role:"admin"});
+  return await serverClient.upsertUser({
+    id: user_id,
+    role: "admin",
+    nickname: "niceNickname",
+  });
 };
-
-
 
 const makeAdmin = async (user_id) => {
   return await serverClient.upsertUser({
     id: user_id,
     role: "user",
-    text:" this is Nice!",
-    message:"great",
-    test:"test",
-    name:"Andre"
+    text: " this is Nice!",
+    message: "great",
+    test: "test",
+    name: "Andre",
   });
 };
 
 //OBS: I can pass new message, text or new strings...
 // upsertMany(userArray).then((r) => console.log(r));
 // makeAdmin("johann8").then((r) => console.log(r));
-upsertOne("Johann").then((r)=>console.log(r))
+upsertOne("johann").then((r) => console.log(r));
 
-//Obs: If the name already exist, 404 
+//Obs: If the name already exist, 404
 
 // const updateResponse = async(id)=>{
-// return await chatClient.upsertUser({ 
-//   id: userID, 
-//   role: 'admin', 
+// return await chatClient.upsertUser({
+//   id: userID,
+//   role: 'admin',
 //   book: 'dune'
 // })
 // }
@@ -51,18 +53,17 @@ upsertOne("Johann").then((r)=>console.log(r))
 //   mark_messages_deleted: false,
 // });
 
-  // //delete user using delete many endpoint
-    // return await serverClient.deleteUsers(["test-user2"], {
-    //   delete_conversation_channels: false,
-    //   user: "hard",
-    //   messages: "hard",
-    // });
+// //delete user using delete many endpoint
+// return await serverClient.deleteUsers(["test-user2"], {
+//   delete_conversation_channels: false,
+//   user: "hard",
+//   messages: "hard",
+// });
 
 // console.log(" destroy", destroy)
 
 // const doTheThing = async () => {
 //   try {
-   
 
 //     // // get channel instance
 //     // const channel = serverClient.channel("messaging", "test-channel-solbeg-6");
@@ -86,7 +87,6 @@ upsertOne("Johann").then((r)=>console.log(r))
 //       messages: "hard",
 //     });
 
-  
 //     // return await serverClient.search(
 //     //   { members: { $in: ["test-user1"] } },
 //     //   "beta"

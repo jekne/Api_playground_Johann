@@ -14,6 +14,9 @@ const createChannel = async (type, channel_id, members, name) => {
   }
 };
 
-createChannel("messaging", "travel", ["luis"], "this name wil be here").then(
-  (r) => console.log(r)
-);
+createChannel(
+  "messaging",
+  "channel_to_delete",
+  ["luis", "johann"],
+  "this name wil be here"
+).then((r) => console.log(r));

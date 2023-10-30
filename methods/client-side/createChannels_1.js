@@ -5,4 +5,4 @@ const createChannel = async (type, id) => {
   return channel.create();
 };
 
-createChannel("messaging", "another").then((r) => console.log(r));
+createChannel("messaging", "custom_field").then((r) => console.log(r));

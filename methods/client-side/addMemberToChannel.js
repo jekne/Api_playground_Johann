@@ -1,8 +1,8 @@
 import { chatClient } from "./client.js";
 
 const addMemberToChannel = async () => {
-  const channel = chatClient.channel("messaging", "testEvents");
-  const add = await channel.addMembers(["zidane"]);
+  const channel = chatClient.channel("messaging", "test_reactions");
+  const add = await channel.addMembers(["@antonio"]);
   return add;
 };
 
